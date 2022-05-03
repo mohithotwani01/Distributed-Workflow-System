@@ -1,0 +1,119 @@
+{
+  "workflows": [
+    {
+      "name": "workflow1",
+      "scheduled_at": 1641480759,
+      "tasks": [
+        {
+          "name": "task1",
+          "description": "Fetch customer data",
+          "cost": 20,
+          "dependencies": []
+        },
+        {
+          "name": "task2",
+          "description": "Extract order information",
+          "cost": 10,
+          "dependencies": ["task1"]
+        },
+        {
+          "name": "task3",
+          "description": "Run Order validation rules",
+          "cost": 10,
+          "dependencies": ["task2"]
+        },
+        {
+          "name": "task4",
+          "description": "Run Company validation rules",
+          "cost": 15,
+          "dependencies": ["task2"]
+        },
+        {
+          "name": "task5",
+          "description": "Post validation results",
+          "cost": 10,
+          "dependencies": ["task3", "task4"]
+        }
+      ]
+    },
+    {
+      "name": "workflow2",
+      "scheduled_at": 1641480759,
+      "tasks": [
+        {
+          "name": "task1",
+          "description": "Fetch customer data",
+          "cost": 20,
+          "dependencies": []
+        },
+        {
+          "name": "task2",
+          "description": "Extract order information",
+          "cost": 10,
+          "dependencies": ["task1"]
+        },
+        {
+          "name": "task3",
+          "description": "Run Order validation rules",
+          "cost": 10,
+          "dependencies": ["task2"]
+        },
+        {
+          "name": "task4",
+          "description": "Run Company validation rules",
+          "cost": 15,
+          "dependencies": ["task2"]
+        },
+        {
+          "name": "task5",
+          "description": "Run Shipping validation rules",
+          "cost": 15,
+          "dependencies": ["task2"]
+        },
+        {
+          "name": "task6",
+          "description": "Refine order data",
+          "cost": 10,
+          "dependencies": ["task3"]
+        },
+        {
+          "name": "task7",
+          "description": "Refine company data",
+          "cost": 15,
+          "dependencies": ["task4"]
+        },
+        {
+          "name": "task8",
+          "description": "Refine shipping data",
+          "cost": 15,
+          "dependencies": ["task5"]
+        },
+        {
+          "name": "task9",
+          "description": "Post refinement results",
+          "cost": 10,
+          "dependencies": ["task6", "task7", "task8"]
+        }
+      ]
+    },
+    {
+      "name": "workflow3",
+      "scheduled_at": 1641480799,
+      "tasks": [
+        {
+          "name": "task1",
+          "description": "Fetch customer data",
+          "cost": 5,
+          "dependencies": []
+        },
+        {
+          "name": "task2",
+          "description": "Extract personal customer information",
+          "cost": 5,
+          "dependencies": ["task1"]
+        }
+      ]
+    }
+  ],
+  "worker_count": 5
+}

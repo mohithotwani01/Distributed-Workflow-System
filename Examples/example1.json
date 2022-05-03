@@ -1,0 +1,39 @@
+{
+    "workflows": [
+        {
+            "name": "workflow1",
+            "scheduled_at": 1641480759,
+            "tasks": [
+                {
+                    "name": "task1",
+                    "description": "Fetch customer data",
+                    "cost": 5,
+                    "dependencies": []
+                },
+                {
+                    "name": "task2",
+                    "description": "Fetch customer data",
+                    "cost": 5,
+                    "dependencies": [
+                        "task1"
+                    ]
+                },
+                {
+                    "name": "task3",
+                    "description": "Fetch customer data",
+                    "cost": 5,
+                    "dependencies": []
+                },
+                {
+                    "name": "task4",
+                    "description": "Fetch customer data",
+                    "cost": 5,
+                    "dependencies": [
+                        "task3"
+                    ]
+                }
+            ]
+        }
+    ],
+    "worker_count": 2
+}
